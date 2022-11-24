@@ -27,24 +27,24 @@ int main(){
     }
 
     struct timespec s1,s2,s3,e1,e2,e3;
-    int S1 = clock_gettime(CLOCK_REALTIME, &s1);
-    int S2 = clock_gettime(CLOCK_REALTIME, &s2);
-    int S3 = clock_gettime(CLOCK_REALTIME, &s3);
 
     pid1 =  fork();
     pid2 = fork();
     pid3 = fork();
 
     if(!pid1){
+        int S1 = clock_gettime(CLOCK_REALTIME, &s1);
         sched_setscheduler(pid1,SCHED_OTHER,schedp1);
         execlp("/bin/bash","sh","bashs.sh",NULL);
     }
 
     else if(!pid2){
+        int S2 = clock_gettime(CLOCK_REALTIME, &s2);
         sched_setscheduler(pid2,SCHED_RR,schedp2);
         execlp("/bin/bash","sh","bashs.sh",NULL);
     }
     else if(!pid3){
+        int S3 = clock_gettime(CLOCK_REALTIME, &s3);
         sched_setscheduler(pid3,SCHED_FIFO,schedp3);
         execlp("/bin/bash","sh","bashs.sh",NULL);
     }
