@@ -3,6 +3,7 @@
 #include <sched.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 
 int p1=0,p2=1,p3=1;
@@ -18,6 +19,7 @@ void* countA(){
 
     }
     clock_gettime(CLOCK_REALTIME,&t2);
+    printf("countA =%f\n",(t2.tv_sec-t1.tv_sec+t2.tv_nsec-t1.tv_nsec)/1e9);
     return NULL;
 }
 
@@ -32,6 +34,7 @@ void* countB(){
 
     }
     clock_gettime(CLOCK_REALTIME,&t2);
+    printf("countB =%f\n",(t2.tv_sec-t1.tv_sec+t2.tv_nsec-t1.tv_nsec)/1e9);
     return NULL;
 }
 
@@ -46,6 +49,7 @@ void* countC(){
 
     }
     clock_gettime(CLOCK_REALTIME,&t2);
+    printf("countC =%f\n",(t2.tv_sec-t1.tv_sec+t2.tv_nsec-t1.tv_nsec)/1e9);
     return NULL;
 }
 
