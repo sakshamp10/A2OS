@@ -1,3 +1,0 @@
-C:/Users/saksh/CLionProjects/A2OS/A2OS/cmake-build-debug/CMakeFiles/A2OS.dir
-C:/Users/saksh/CLionProjects/A2OS/A2OS/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/saksh/CLionProjects/A2OS/A2OS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
