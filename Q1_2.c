@@ -32,9 +32,9 @@ int main(){
     int S3 = clock_gettime(CLOCK_REALTIME, &s3);
 
     pid1 = fork();
-    //pid2 = fork();
+    pid2 = fork();
     //pid3 = fork();
-    pid2 =pid1;
+    //pid2 =pid1;
     pid3 = pid1;
     if(!pid1){
         sched_setscheduler(pid1,SCHED_OTHER,schedp1);
