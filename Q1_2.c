@@ -33,7 +33,7 @@ int main(){
 
     pid1 = fork();
     pid2 = fork();
-    pid3 = fork();
+    pid3 = fork();//
     //pid2 =pid1;
     //pid3 = pid1;
     if(!pid1){
