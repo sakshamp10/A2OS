@@ -33,9 +33,9 @@ int main(){
 
     pid1 = fork();
     pid2 = fork();
-    //pid3 = fork();
+    pid3 = fork();
     //pid2 =pid1;
-    pid3 = pid1;
+    //pid3 = pid1;
     if(!pid1){
         sched_setscheduler(pid1,SCHED_OTHER,schedp1);
         execlp("/bin/bash","sh","bash1.sh",NULL);
