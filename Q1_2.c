@@ -35,7 +35,7 @@ int main() {
             pid_t proc_2 = fork();
             struct sched_param sp2;
             sp2.sched_priority = 0;
-            sched_setscheduler(proc_2, SCHED_OTHER, &sp2);
+            sched_setscheduler(proc_2, SCHED_RR, &sp2);
             if (proc_2 == 0) {
                 execlp("/bin/sh", "sh", "b2.sh", NULL);
             } else if (proc_2 > 0) {
@@ -54,7 +54,7 @@ int main() {
                 pid_t proc_3 = fork();
                 struct sched_param sp3;
                 sp2.sched_priority = 0;
-                sched_setscheduler(proc_3, SCHED_OTHER, &sp3);
+                sched_setscheduler(proc_3, SCHED_FIFO, &sp3);
                 if (proc_3 == 0) {
                     execlp("/bin/sh", "sh", "b2.sh", NULL);
                 } else if (proc_3 > 0) {
