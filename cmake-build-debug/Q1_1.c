@@ -52,18 +52,12 @@ void* countC(){
 
 int main(){
     pthread_t ThA,ThB,ThC;
-    int i=6;
-    while(i--){
         pthread_create(&ThA,NULL,&countA,NULL);
         pthread_create(&ThB,NULL,&countB,NULL);
         pthread_create(&ThC,NULL,&countC,NULL);
         pthread_join(ThA,NULL);
         pthread_join(ThB,NULL);
         pthread_join(ThC,NULL);
-        p1++;
-        p2++;
-        p3++;
-    }
 
 
     return 0;
