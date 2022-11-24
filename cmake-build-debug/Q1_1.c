@@ -23,7 +23,7 @@ void* countA(){
     }
     struct timespec ta1;
     clock_gettime(CLOCK_REALTIME,&ta1);
-    printf("countA =%f\n",((ta1.tv_sec-ta2.tv_sec)+(ta1.tv_nsec-ta2.tv_nsec))/1e9);
+    printf("countA =%f\n",(ta1.tv_sec-ta2.tv_sec)+(ta1.tv_nsec-ta2.tv_nsec)/1e9);
     return NULL;
 }
 
@@ -40,7 +40,7 @@ void* countB(){
         }
     }
     clock_gettime(CLOCK_REALTIME,&tb1);
-    printf("countB =%f\n",(tb1.tv_sec-tb2.tv_sec+tb1.tv_nsec-tb2.tv_nsec)/1e9);
+    printf("countB =%f\n",tb1.tv_sec-tb2.tv_sec+(tb1.tv_nsec-tb2.tv_nsec)/1e9);
     return NULL;
 }
 
@@ -57,7 +57,7 @@ void* countC(){
         }
     }
     clock_gettime(CLOCK_REALTIME,&tc1);
-    printf("countC =%f\n",(tc1.tv_sec-tc2.tv_sec+tc1.tv_nsec-tc2.tv_nsec)/1e9);
+    printf("countC =%f\n",tc1.tv_sec-tc2.tv_sec+(tc1.tv_nsec-tc2.tv_nsec)/1e9);
     return NULL;
 }
 
