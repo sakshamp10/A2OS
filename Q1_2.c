@@ -52,7 +52,7 @@ int main(){
         exit(0);
     }
 
-    for(int i =0; i<3; i++){
+    for(int i =0; i<2; i++){
         pid_t pz = wait(NULL);
         if(pz == pid1){
             int E1=clock_gettime(CLOCK_REALTIME,&e1);
@@ -62,13 +62,11 @@ int main(){
         else if(pz == pid2){
             int E2=clock_gettime(CLOCK_REALTIME,&e2);
             double ans2=e2.tv_sec-s2.tv_sec+(e2.tv_nsec-s2.tv_nsec)/1e9;
-            ans2/=(double)1e9;
             printf("----------RunTime for second thread: %lfs----------\n",(ans2));
         }
         else if(pz == pid3){
             int E3=clock_gettime(CLOCK_REALTIME,&e3);
             double ans3=e3.tv_sec-s3.tv_sec+(e3.tv_nsec-s3.tv_nsec)/1e9;
-            ans3/=(double)1e9;
             printf("----------RunTime for third thread: %lfs----------\n",(ans3));
         }
     }
