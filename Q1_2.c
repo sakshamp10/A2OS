@@ -38,15 +38,18 @@ int main(){
     if(pid1==0 && pid2!=0 && pid3!=0){
         sched_setscheduler(pid1,SCHED_OTHER,schedp1);
         execlp("/bin/bash","sh","bash1.sh",NULL);
+        exit(0);
     }
 
     else if(pid2==0 && pid1!=0 && pid3!=0){
         sched_setscheduler(pid2,SCHED_RR,schedp2);
         execlp("/bin/bash","sh","bash2.sh",NULL);
+        exit(0);
     }
     else if(pid3==0 && pid2!=0 & pid1!=0){
         sched_setscheduler(pid3,SCHED_FIFO,schedp3);
         execlp("/bin/bash","sh","bash3.sh",NULL);
+        exit(0);
     }
 
     for(int i =0; i<3; i++){
