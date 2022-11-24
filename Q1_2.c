@@ -49,7 +49,7 @@ int main(){
         execlp("/bin/bash","sh","bash3.sh",NULL);
     }
 
-    for(int i =0; i<2; i++){
+    for(int i =0; i<3; i++){
         pid_t pz = wait(NULL);
         if(pz == pid1){
             int E1=clock_gettime(CLOCK_REALTIME,&e1);
